@@ -15,7 +15,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="color2">The secondary ped color ID to use.</param>
 		/// <param name="color3">The tertiary ped color ID to use.</param>
 		/// <param name="color4">The quaternary ped color ID to use.</param>
-		public static void ChangePlayerPedColor(BasePlayer player, int color1, int color2, int color3, int color4)
+		public static void ChangePedColor(BasePlayer player, int color1, int color2, int color3, int color4)
 		{
 			UGMP.Internal.ChangePlayerPedColor(player.Id, color1, color2, color3, color4);
 		}
@@ -25,7 +25,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <returns>The aircraft height limit set for this player.</returns>
-		public static float GetPlayerAircraftHeightLimit(BasePlayer player)
+		public static float GetAircraftHeightLimit(BasePlayer player)
 		{
 			return UGMP.Internal.GetPlayerAircraftHeightLimit(player.Id);
 		}
@@ -35,7 +35,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <returns>The jetpack height limit set for this player.</returns>
-		public static float GetPlayerJetpackHeightLimit(BasePlayer player)
+		public static float GetJetpackHeightLimit(BasePlayer player)
 		{
 			return UGMP.Internal.GetPlayerJetpackHeightLimit(player.Id);
 		}
@@ -46,7 +46,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="player">The player which to get the model ID for.</param>
 		/// <param name="modelname">The model name to get the model ID for.</param>
 		/// <returns>The model ID for the specified model name and player. INVALID_MODEL if it cannot be retrieved.</returns>
-		public static int GetPlayerNetModelID(BasePlayer player, string modelname)
+		public static int GetNetModelID(BasePlayer player, string modelname)
 		{
 			return UGMP.Internal.GetPlayerNetModelID(player.Id, modelname);
 		}
@@ -59,7 +59,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="color2">The secondary ped color ID used by this player ped. This parameter is updated by this native and is passed by reference.</param>
 		/// <param name="color3">The tertiary ped color ID used by this player ped. This parameter is updated by this native and is passed by reference.</param>
 		/// <param name="color4">The quaternary ped color ID used by this player ped. This parameter is updated by this native and is passed by reference.</param>
-		public static void GetPlayerPedColor(BasePlayer player, out int color1, out int color2, out int color3, out int color4)
+		public static void GetPedColor(BasePlayer player, out int color1, out int color2, out int color3, out int color4)
 		{
 			UGMP.Internal.GetPlayerPedColor(player.Id, out color1, out color2, out color3, out color4);
 		}
@@ -70,7 +70,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="player">The player ID for which to verify a model ID's validity.</param>
 		/// <param name="modelid">The model ID to verify.</param>
 		/// <returns>1 if the model is valid, 0 if it isn't.</returns>
-		public static bool IsAClmpNetModelValidForPlayer(BasePlayer player, int modelid)
+		public static bool IsAClmpNetModelValid(BasePlayer player, int modelid)
 		{
 			return UGMP.Internal.IsAClmpNetModelValidForPlayer(player.Id, modelid);
 		}
@@ -81,7 +81,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="player">The player ID for which to verify a model ID's validity.</param>
 		/// <param name="modelid">The model ID to verify.</param>
 		/// <returns>1 if the model is valid, 0 if it isn't.</returns>
-		public static bool IsAtmModelValidForPlayer(BasePlayer player, int modelid)
+		public static bool IsAtmModelValid(BasePlayer player, int modelid)
 		{
 			return UGMP.Internal.IsAtmModelValidForPlayer(player.Id, modelid) == 1;
 		}
@@ -92,7 +92,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="player">The player ID for which to verify a model ID's validity.</param>
 		/// <param name="modelid">The model ID to verify.</param>
 		/// <returns>1 if the model is valid, 0 if it isn't.</returns>
-		public static bool IsPedModelValidForPlayer(BasePlayer player, int modelid)
+		public static bool IsPedModelValid(BasePlayer player, int modelid)
 		{
 			return UGMP.Internal.IsPedModelValidForPlayer(player.Id, modelid);
 		}
@@ -102,7 +102,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <returns>0: Rubbish will not be visible to this player.1: Rubbish will be visible to this player.</returns>
-		public static bool IsRubbishVisibleForPlayer(BasePlayer player)
+		public static bool IsRubbishVisible(BasePlayer player)
 		{
 			return UGMP.Internal.IsRubbishVisibleForPlayer(player.Id);
 		}
@@ -123,7 +123,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="player">The player ID for which to verify a model ID's validity.</param>
 		/// <param name="modelid">The model ID to verify.</param>
 		/// <returns>1 if the model is valid, 0 if it isn't.</returns>
-		public static bool IsTimeModelValidForPlayer(BasePlayer player, int modelid)
+		public static bool IsTimeModelValid(BasePlayer player, int modelid)
 		{
 			return UGMP.Internal.IsTimeModelValidForPlayer(player.Id, modelid);
 		}
@@ -134,7 +134,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="player">The player ID for which to verify a model ID's validity.</param>
 		/// <param name="modelid">The model ID to verify.</param>
 		/// <returns>1 if the model is valid, 0 if it isn't.</returns>
-		public static bool IsVehicleModelValidForPlayer(BasePlayer player, int modelid)
+		public static bool IsVehicleModelValid(BasePlayer player, int modelid)
 		{
 			return UGMP.Internal.IsVehicleModelValidForPlayer(player.Id, modelid);
 		}
@@ -144,7 +144,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="heightLimit">The aircraft height limit which will be set for the player.</param>
-		public static void SetAircraftHeightLimitForPlayer(BasePlayer player, float heightLimit)
+		public static void SetAircraftHeightLimit(BasePlayer player, float heightLimit)
 		{
 			UGMP.Internal.SetAircraftHeightLimitForPlayer(player.Id, heightLimit);
 		}
@@ -154,7 +154,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="heightLimit">The jetpack height limit which will be set for the player.</param>
-		public static void SetJetpackHeightLimitForPlayer(BasePlayer player, float heightLimit)
+		public static void SetJetpackHeightLimit(BasePlayer player, float heightLimit)
 		{
 			UGMP.Internal.SetJetpackHeightLimitForPlayer(player.Id, heightLimit);
 		}
@@ -164,7 +164,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
-		public static void SetPlayerFireProof(BasePlayer player, bool enable)
+		public static void SetFireProof(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.SetPlayerFireProof(player.Id, enable);
 		}
@@ -173,7 +173,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// Overrides the color of one or more HUD components for a specific player.
 		/// </summary>
 		/// <param name="player">The player.</param>
-		public static void SetPlayerHUDComponentsColour(BasePlayer player)
+		public static void SetHUDComponentsColour(BasePlayer player)
 		{
 			UGMP.Internal.SetPlayerHUDComponentsColour(player.Id);
 		}
@@ -183,7 +183,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="knockState">The 'behavior type' which should be set for this player. This parameter can be one of the following values:BIKE_KNOCK_OFF_DEFAULT - The player can be knocked off a bike by crashing, or whatever. The difference between BIKE_KNOCK_OFF_ALWAYS and BIKE_KNOCK_OFF_DEFAULT is that with the default value used mission peds aren't knocked off their bike as often, but with BIKE_KNOCK_OFF_ALWAYS mission peds can be knocked off their bike just as easily as normal peds.BIKE_KNOCK_OFF_NEVER - Never allow a player to be knocked off a bike, even when crashing into a wall at full speed.BIKE_KNOCK_OFF_ALWAYS - See the description for BIKE_KNOCK_OFF_DEFAULT</param>
-		public static void SetPlayerKnockedOffBikeState(BasePlayer player, int knockState)
+		public static void SetKnockedOffBikeState(BasePlayer player, int knockState)
 		{
 			UGMP.Internal.SetPlayerKnockedOffBikeState(player.Id, knockState);
 		}
@@ -193,7 +193,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="season">Use one of the following types:SEASON_DONT_OVERRIDE - Disables the season override. The game will switch back to its UGMP.Internal season when used.SEASON_SUMMERSEASON_AUTUMNSEASON_WINTERSEASON_SPRING</param>
-		public static void SetPlayerSeason(BasePlayer player, int season)
+		public static void SetSeason(BasePlayer player, int season)
 		{
 			UGMP.Internal.SetPlayerSeason(player.Id, season);
 		}
@@ -203,7 +203,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable. Enabled for all players by default.</param>
-		public static void ToggleSASunPositionFormula_Pl(BasePlayer player, bool enable)
+		public static void ToggleSASunPositionFormula(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.ToggleSASunPositionFormula_Pl(player.Id, enable);
 		}
@@ -213,7 +213,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
-		public static void TogglePlayerCCTV(BasePlayer player, bool enable)
+		public static void ToggleCCTV(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerCCTV(player.Id, enable);
 		}
@@ -224,7 +224,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
 		/// <param name="darknessAlpha">Darkness effect transparency. This native expects a value between 0 and 255.</param>
-		public static void TogglePlayerDarknessFilter(BasePlayer player, bool enable, int darknessAlpha)
+		public static void ToggleDarknessFilter(BasePlayer player, bool enable, int darknessAlpha)
 		{
 			UGMP.Internal.TogglePlayerDarknessFilter(player.Id, enable, darknessAlpha);
 		}
@@ -234,7 +234,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable. Enabled for all players by default.</param>
-		public static void TogglePlayerFluffyClouds(BasePlayer player, bool enable)
+		public static void ToggleFluffyClouds(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerFluffyClouds(player.Id, enable);
 		}
@@ -244,7 +244,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
-		public static void TogglePlayerFogOverlay(BasePlayer player, bool enable)
+		public static void ToggleFogOverlay(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerFogOverlay(player.Id, enable);
 		}
@@ -254,7 +254,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to make procedural grass visible, and 0 to make grass invisible.</param>
-		public static void TogglePlayerGrass(BasePlayer player, bool enable)
+		public static void ToggleGrass(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerGrass(player.Id, enable);
 		}
@@ -264,7 +264,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="hudComponent">A bitfield of all HUD components. This can be one of the following values:HUD_COMPONENT_AMMOHUD_COMPONENT_WEAPONICONHUD_COMPONENT_HEALTHHUD_COMPONENT_OXYGENHUD_COMPONENT_ARMOURHUD_COMPONENT_RADARHUD_COMPONENT_CROSSHAIRHUD_COMPONENT_MONEYHUD_COMPONENT_LASERDOT</param>
-		public static void TogglePlayerHUDComponents(BasePlayer player, int hudComponent)
+		public static void ToggleHUDComponents(BasePlayer player, int hudComponent)
 		{
 			UGMP.Internal.TogglePlayerHUDComponents(player.Id, hudComponent);
 		}
@@ -274,7 +274,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
-		public static void TogglePlayerInfiniteSprint(BasePlayer player, bool enable)
+		public static void ToggleInfiniteSprint(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerInfiniteSprint(player.Id, enable);
 		}
@@ -284,7 +284,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
-		public static void TogglePlayerInfraRed(BasePlayer player, bool enable)
+		public static void ToggleInfraRed(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerInfraRed(player.Id, enable);
 		}
@@ -294,7 +294,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable. Enabled for all players by default.</param>
-		public static void TogglePlayerLowClouds(BasePlayer player, bool enable)
+		public static void ToggleLowClouds(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerLowClouds(player.Id, enable);
 		}
@@ -304,7 +304,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable. Enabled for all players by default.</param>
-		public static void TogglePlayerMoon(BasePlayer player, bool enable)
+		public static void ToggleMoon(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerMoon(player.Id, enable);
 		}
@@ -314,7 +314,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
-		public static void TogglePlayerNightVision(BasePlayer player, bool enable)
+		public static void ToggleNightVision(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerNightVision(player.Id, enable);
 		}
@@ -324,7 +324,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable. Enabled for all players by default.</param>
-		public static void TogglePlayerRainbow(BasePlayer player, bool enable)
+		public static void ToggleRainbow(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerRainbow(player.Id, enable);
 		}
@@ -334,7 +334,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to make rubbish visible, and 0 to make rubbish invisible.</param>
-		public static void TogglePlayerRubbish(BasePlayer player, bool enable)
+		public static void ToggleRubbish(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerRubbish(player.Id, enable);
 		}
@@ -344,7 +344,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable. Enabled for all players by default.</param>
-		public static void TogglePlayerStars(BasePlayer player, bool enable)
+		public static void ToggleStars(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerStars(player.Id, enable);
 		}
@@ -354,7 +354,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
-		public static void TogglePlayerSun(BasePlayer player, bool enable)
+		public static void ToggleSun(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerSun(player.Id, enable);
 		}
@@ -364,7 +364,7 @@ namespace SampSharp.UndergroundMP.Extensions
 		/// </summary>
 		/// <param name="player">The player.</param>
 		/// <param name="enable">1 to enable, and 0 to disable.</param>
-		public static void TogglePlayerVideoCameraOverlay(BasePlayer player, bool enable)
+		public static void ToggleVideoCameraOverlay(BasePlayer player, bool enable)
 		{
 			UGMP.Internal.TogglePlayerVideoCameraOverlay(player.Id, enable);
 		}
