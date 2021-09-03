@@ -1,5 +1,8 @@
 ﻿namespace SampSharp.UndergroundMP.Events
 {
+    /// <summary>
+    /// Add model event arguments
+    /// </summary>
     public class AddModelEventArgs
     {
         /// <summary>

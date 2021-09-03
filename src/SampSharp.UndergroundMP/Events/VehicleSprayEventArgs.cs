@@ -2,6 +2,9 @@
 
 namespace SampSharp.UndergroundMP.Events
 {
+    /// <summary>
+    /// Vehicle spray event arguments
+    /// </summary>
     public class VehicleSprayEventArgs
     {
         /// <summary>

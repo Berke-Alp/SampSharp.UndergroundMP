@@ -5,10 +5,20 @@ using SampSharp.UndergroundMP;
 [assembly: SampSharpExtension(typeof(UGMP))]
 namespace SampSharp.UndergroundMP
 {
+	/// <summary>
+	/// Underground Multiplayer wrapper class
+	/// </summary>
     public partial class UGMP : Extension, IUGMP
     {
+		/// <summary>
+		/// The GameMode which uses this wrapper
+		/// </summary>
         public BaseMode GameMode { get; private set; }
 
+		/// <summary>
+		/// This method loads the services (and natives) to the GameMode
+		/// </summary>
+		/// <param name="gameMode"></param>
         public override void LoadServices(BaseMode gameMode)
         {
             GameMode = gameMode;

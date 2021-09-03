@@ -2,6 +2,9 @@
 
 namespace SampSharp.UndergroundMP.Events
 {
+    /// <summary>
+    /// Laser dot event arguments
+    /// </summary>
     public class LaserDotEventArgs
     {
         /// <summary>

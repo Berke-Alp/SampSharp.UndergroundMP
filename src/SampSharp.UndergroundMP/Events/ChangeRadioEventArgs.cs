@@ -2,6 +2,9 @@
 
 namespace SampSharp.UndergroundMP.Events
 {
+    /// <summary>
+    /// Change radio event arguments
+    /// </summary>
     public class ChangeRadioEventArgs
     {
         /// <summary>

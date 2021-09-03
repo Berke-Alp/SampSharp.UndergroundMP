@@ -4,6 +4,9 @@ namespace SampSharp.UndergroundMP
 {
     public partial class UGMP
     {
+		/// <summary>
+		/// Internal object of UG:MP
+		/// </summary>
         public static UGMPInternal Internal { get; }
 
         static UGMP()
@@ -11,6 +14,9 @@ namespace SampSharp.UndergroundMP
             Internal = NativeObjectProxyFactory.CreateInstance<UGMPInternal>();
         }
 
+		/// <summary>
+		/// Internal class of Underground Multiplayer
+		/// </summary>
         public class UGMPInternal
         {
 			#region Ped Natives
