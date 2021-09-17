@@ -914,7 +914,7 @@ namespace SampSharp.UndergroundMP
 		/// Adds a data file which will be loaded by players once they join. This native allows you to specify a custom vehicle audio settings file, or a carcols.dat file, for example.
 		/// </summary>
 		/// <param name="filename">The path to the data file, relative to the assets folder.</param>
-		/// <param name="file type">The type of file this is. See this page for a list of possible file types.</param>
+		/// <param name="filetype">The type of file this is. See this page for a list of possible file types.</param>
 		public static void AddDataFile(string filename, int filetype)
 		{
 			Internal.AddDataFile(filename, filetype);
@@ -1010,12 +1010,12 @@ namespace SampSharp.UndergroundMP
 			Internal.ApplyMapOffsetToCoords(type, x_coor, y_coor, z_coor);
 		}
 
-		/// <summary>
-		/// Checks whether or not an animation name & animation library pair refers to a valid animation.
-		/// </summary>
-		/// <param name="animlib">The name of the animation library.</param>
-		/// <param name="animname">The name of the animation.</param>
-		public static void IsValidAnimationAndLibrary(string animlib, string animname)
+        /// <summary>
+        /// Checks whether or not an animation name and animation library pair refers to a valid animation.
+        /// </summary>
+        /// <param name="animlib">The name of the animation library.</param>
+        /// <param name="animname">The name of the animation.</param>
+        public static void IsValidAnimationAndLibrary(string animlib, string animname)
 		{
 			Internal.IsValidAnimationAndLibrary(animlib, animname);
 		}

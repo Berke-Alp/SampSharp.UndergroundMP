@@ -16,6 +16,12 @@ namespace SampSharp.UndergroundMP
             VehicleResprayAtGarage?.Invoke(player, e);
         }
 
+        /// <summary>
+        /// This callback fires whenever a player is using a laser rifle and the dot position changed.
+        /// </summary>
+        /// <param name="player">The player which is using a laser rifle.</param>
+        /// <param name="e">Event arguments</param>
+        /// <returns></returns>
         protected virtual bool OnLaserDotUpdate(BasePlayer player, LaserDotEventArgs e)
         {
             LaserDotUpdate?.Invoke(player, e);
@@ -62,11 +68,29 @@ namespace SampSharp.UndergroundMP
             PlayerChangeRadio?.Invoke(player, e);
         }
 
+        /// <summary>
+        /// This event fires whenever a vehicle gets resprayed at a Pay N' Spray garage.
+        /// </summary>
         public event EventHandler<VehicleSprayEventArgs> VehicleResprayAtGarage;
+        /// <summary>
+        /// This event fires whenever a player is using a laser rifle and the dot position changed.
+        /// </summary>
         public event EventHandler<LaserDotEventArgs> LaserDotUpdate;
+        /// <summary>
+        /// Event which fires when downloading has started for a player.
+        /// </summary>
         public event EventHandler PlayerStartedDownloading;
+        /// <summary>
+        /// Event which fires when downloading has finished for a player.
+        /// </summary>
         public event EventHandler PlayerFinishedDownloading;
+        /// <summary>
+        /// This event fires whenever a player changes the radio station inside a vehicle.
+        /// </summary>
         public event EventHandler<ChangeRadioEventArgs> PlayerChangeRadio;
+        /// <summary>
+        /// Event which fires whenever a server-side model is fully set up and a valid model ID is stored for the player.
+        /// </summary>
         public event EventHandler<AddModelEventArgs> AddModelCompleted;
     }
 }

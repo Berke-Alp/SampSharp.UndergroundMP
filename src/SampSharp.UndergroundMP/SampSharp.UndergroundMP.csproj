@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	<Version>1.0.0</Version>
+	  <Version>1.0.1</Version>
     <Authors>silentdev</Authors>
     <Product>SampSharp.UndergroundMP</Product>
     <Description>A .NET Wrapper for the latest stable release of UG:MP (b1.0-SNAPSHOT4_2).</Description>
@@ -13,17 +13,33 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RootNamespace>SampSharp.UndergroundMP</RootNamespace>
     <Company>silentdev</Company>
+    <Configurations>Debug;Release;UGMP</Configurations>
+    <PackageProjectUrl>https://github.com/Berke-Alp/SampSharp.UndergroundMP</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Berke-Alp/SampSharp.UndergroundMP</RepositoryUrl>
+    <RepositoryType>SampSharp Wrapper</RepositoryType>
+    <PackageTags>SampSharp,Wrapper,Underground Multiplayer,UGMP</PackageTags>
+    <PackageReleaseNotes>Added vehicle and weapon definitions (enum)</PackageReleaseNotes>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="SampSharp.GameMode" Version="0.9.1" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\silentdev\source\repos\EightyOne\SampSharp.UndergroundMP\SampSharp.UndergroundMP.xml</DocumentationFile>
+    <OutputPath>C:\Users\silentdev\source\repos\EightyOne\NugetOutput\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UGMP|AnyCPU'">
+    <DocumentationFile>C:\Users\silentdev\source\repos\EightyOne\SampSharp.UndergroundMP\SampSharp.UndergroundMP.xml</DocumentationFile>
+    <OutputPath>C:\Users\silentdev\source\repos\EightyOne\NugetOutput\</OutputPath>
+  </PropertyGroup>
   
   <ItemGroup>
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\SampSharp\src\SampSharp.GameMode\SampSharp.GameMode.csproj" />
   </ItemGroup>
 
 </Project>
